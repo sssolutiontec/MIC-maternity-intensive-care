@@ -1,0 +1,92 @@
+<div class="custom-grid-3 mr-70">
+  <!-- Start Widget Sidebar Area -->
+  <div class="widget-sidebar-area ">
+
+    {% if page.manualLevel1Category or page.categories[1] %}
+    <!-- Start Widget Single Item - Sidbar Nav -->
+    <div class="widget-single-item">
+      <div class="widget-inner-box">
+        {% if page.manualLevel1Category %}
+        {% assign mainCategory = page.manualLevel1Category %}
+        {% else page.categories[1] %}
+        {% assign mainCategory = page.categories[1] %}
+        {%endif%}
+
+        <h3 class="title">{{ mainCategory | capitalize }} Categories</h3>
+        {% assign subCategories = site.categories[mainCategory]| map: "categories"| uniq %}
+        <ul class="widget-default-nav">
+          {% for subCategory in subCategories offset:2 %}
+
+          {% if subCategory == page.manualLevel2Category %}
+          {% continue %}
+          {% endif %}
+
+          <li class="icon-space-right">
+            <a href="{{ site.url }}/blog/{{ mainCategory }}/{{ subCategory }}">
+              <i class="icofont-double-right"></i> {{ subCategory | capitalize }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <!-- End Widget Single Item - Sidbar Nav -->
+    {% endif %}
+
+    <!-- if title is present it is blog page -->
+    {% if page.title %}
+    <!-- Start Widget Single Item - Recent Post -->
+    <div class="widget-single-item">
+      <div class="widget-inner-box">
+        <h3 class="title">Related Post</h3>
+        <ul class="widget-blog-post">
+          {% for category in site.categories %}
+          {% unless category[0] == page.categories[2] %}
+          {% continue %}
+          {% endunless %}
+
+          {% for posts in category %}
+          {% for post in posts %}
+
+          {% if post.title == Nil or post.title == page.title %}
+          {% continue %}
+          {% endif %}
+
+          <!-- Start Widget Blog Post Single Item -->
+          <li class="widget-blog-post-single-item">
+            <a href="blog-details.html" class="image">
+              <img src="{{ post.image }}" alt="">
+            </a>
+            <div class="content">
+              <span class="date">{{ post.date | date_to_string }}</span>
+              <h5 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+              <a href="{{ post.url }}" class="click-more">Details <i class="icofont-double-right"></i></a>
+            </div>
+          </li>
+          <!-- end Widget Blog Post Single Item -->
+          {% endfor %}
+          {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <!-- End Widget Single Item - Recent Post -->
+    {% endif %}
+
+    <!-- Start Widget Single Item - Sidbar Nav -->
+    <div class="widget-single-item">
+      <div class="widget-inner-box">
+        <h3 class="title">Category</h3>
+        <ul class="widget-default-tag">
+          {% for category in site.data.mainCategories.categories %}
+          <li>
+            <a href="{{ site.url }}{{ site.data.mainCategories.path }}{{ category }}">{{ category | capitalize}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <!-- End Widget Single Item - Sidbar Nav -->
+    <!-- End Widget Sidebar Area -->
+  </div>
+</div>

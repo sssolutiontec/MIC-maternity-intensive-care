@@ -1,0 +1,98 @@
+---
+layout: page
+---
+<!-- ...::: Start Blog Details Section :::... -->
+<div class="blog-details-section section-top-gap-200">
+  <div class="box-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Start Content Wrapper Area  -->
+          <div class="custom-container-grid-wrappper d-flex flex-column-reverse flex-lg-row">
+            {% include blog-sidebar.html %}
+            <div class="custom-grid-9">
+              <!-- Start Blog Details Content -->
+              <div class="blog-details-content">
+                <div class="default-text-content">
+                  <div class="default-content-hero-image">
+                    <img class="img-fluid" src="{{ page.image }}" alt="">
+                  </div>
+
+                  <!-- Start Meta Info -->
+                  <div class="info">
+                    <a href="#" class="catagory">{{ page.categories[1] }}</a>
+                    <div class="meta-data">
+                      <a href="#" class="author">{% include readingTime.html %}</a>
+                      <a href="#" class="date">{{ page.date | date_to_string }}</a>
+                    </div>
+                  </div>
+                  <!-- End Meta Info -->
+
+                  <h2 class="title">{{ page.title }}
+                    <span>{{ page.subtitle }}</span>
+                  </h2>
+
+                  {{ content }}
+
+                </div>
+              </div>
+              <!-- End Blog Details Content -->
+
+              <!-- Start Blog Details Tags and Social Link -->
+              <div class="blog-details-tag-social-link">
+                <!-- Start Blog Details Tag -->
+                <div class="blog-details-tag">
+                  <span class="title">Tags: </span>
+                  <ul>
+                    <li><a href="#">pregnancy</a></li>
+                    <li><a href="#">doctor</a></li>
+                    <li><a href="#">baby</a></li>
+                  </ul>
+                </div>
+                <!-- End Blog Details Tag -->
+                <!-- Start Social Link Tag -->
+                <div class="social-link-tag">
+                  <span class="title">Share: </span>
+                  <ul>
+                    <li><a href="https://example.com">facebook</a></li>
+                    <li><a href="https://example.com">twitter</a></li>
+                    <li><a href="https://example.com">skype</a></li>
+                  </ul>
+                </div>
+                <!-- End Social Link Tag -->
+              </div>
+              <!-- End Blog Details Tags and Social Link -->
+              <br /><br />
+              <strong>Note:</strong>
+              {% if page.sources %}
+              <em>
+                This article relies on authoritative guidance from reputable medical and governmental sources. A
+                comprehensive list of references is provided below for further
+                verification.
+              </em>
+              {% endif %}
+              <em>
+                It's important to note that the content on this page is not a substitute for professional
+                medical advice. For accurate diagnosis and treatment, always consult with qualified medical
+                professionals.
+              </em><br />
+              {% if page.sources %}
+              <div class="block-quote">
+                <strong>Information Sources</strong><br />
+                {% for source in page.sources %}
+                <li>
+                  <a target="_blank" rel="noopener noreferrer" href="https://{{ source.link }}">{{ source.text
+                    |capitalize }}</a>
+                </li>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <!-- End Content Wrapper Details Area  -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...::: End Blog Details Section :::... -->

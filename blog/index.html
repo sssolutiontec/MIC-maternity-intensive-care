@@ -1,0 +1,31 @@
+---
+layout: page
+---
+<!-- ...::: Start Blog List Section :::... -->
+<div class="blog-list-section section-top-gap-200">
+  <div class="box-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Start Custom Container Grid Wrapper -->
+          <div class="custom-container-grid-wrappper d-flex flex-column-reverse flex-lg-row">
+            {% include blog-sidebar.html %}
+            <div class="custom-grid-9">
+              <!-- Start Blog List Area -->
+              <div class="blog-list-area">
+                <div class="row mb-n60">
+                  {% for post in site.categories["blog"] %}
+                  {% include single-post-overview.html %}
+                  {% endfor %}
+                </div>
+              </div>
+              <!-- End Blog List Area -->
+            </div>
+          </div>
+          <!-- End Custom Container Grid Wrapper -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...::: End Blog List Section :::... -->

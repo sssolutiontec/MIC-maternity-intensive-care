@@ -1,0 +1,24 @@
+{% if post.title == Nil %}
+{% continue %}
+{% endif %}
+
+<div class="col-xl-6 col-lg-12 col-md-6 mb-60">
+  <!-- Start Blog List Single Item -->
+  <div class="blog-list-single-item">
+    <a href="{{ post.url }}" class="image">
+      <img src="{{ post.image }}" alt="">
+    </a>
+    <div class="content">
+      <div class="info">
+        <a href="{{ site.url }}/{{ post.categories | join: '/' }}" class="catagory"> {{ post.categories | last }}</a>
+        <div class="meta-data">
+          <a href="#" class="date">{{ post.date | date_to_string }}</a>
+        </div>
+      </div>
+      <h5 class="title"> <a href="{{ post.url }}">{{ post.title }}</a></h5>
+      <p>{{ post.excerpt }}</p>
+      <a href="{{ post.url }}" class="btn btn-sm btn-light-blue">Details <i class="icofont-double-right"></i></a>
+    </div>
+  </div>
+  <!-- End Blog List Single Item -->
+</div>

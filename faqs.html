@@ -1,0 +1,67 @@
+---
+layout: page
+title: FAQS
+---
+<!-- ...::: Start Faq Section :::... -->
+<div class="faq-section section-top-gap-200">
+  <div class="box-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Start Custom Container Grid Wrapper -->
+          <div class="custom-container-grid-wrappper d-flex flex-column-reverse flex-lg-row-reverse">
+            <div class="custom-grid-3 ml-70">
+              <!-- Start Widget Sidebar Area -->
+              <div class="widget-sidebar-area">
+                <!-- Start Widget Single Item - Sidbar Nav -->
+                <div class="widget-single-item">
+                  <div class="widget-inner-box">
+                    <h3 class="title">Post Category</h3>
+                    <ul class="widget-default-nav">
+                      {% for category in site.data.mainCategories.categories %}
+                      <li class="icon-space-right">
+                        <a href="{{ site.url }}{{ site.data.mainCategories.path }}{{ category }}">
+                          <i class="icofont-double-right"></i> {{ category | capitalize}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+                <!-- End Widget Single Item - Sidbar Nav -->
+                <!-- Start Widget Single Item - Sidbar Nav -->
+                <div class="widget-single-item">
+                  <div class="widget-inner-box">
+                    <div class="banner-image text-center"><img class="img-fluid"
+                        src="assets/images/faq/widget-faq-img.png" alt=""></div>
+                  </div>
+                </div>
+                <!-- End Widget Single Item - Sidbar Nav -->
+              </div>
+              <!-- End Widget Sidebar Area -->
+            </div>
+
+            <div class="custom-grid-9">
+              <!-- Start Faq Area -->
+              <ul class="faq-list-area">
+                {% for faq in site.data.faqs %}
+                <!-- Start Faq Single Item -->
+                <li class="faq-single-item">
+                  <div class="number">{{ forloop.index }}</div>
+                  <div class="content">
+                    <h5 class="title">{{ faq.qus }}</h5>
+                    <p>{{ faq.ans }}</p>
+                  </div>
+                </li>
+                {% endfor %}
+                <!-- End Faq Single Item -->
+              </ul>
+              <!-- End Faq Area -->
+            </div>
+          </div>
+          <!-- End Custom Container Grid Wrapper -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...::: End Faq Section :::... -->

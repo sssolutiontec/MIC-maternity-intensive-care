@@ -1,0 +1,102 @@
+<!-- ...::: Start Footer Section :::... -->
+<footer class="footer-section section-top-gap-200">
+  <!-- Start Footer Top Area -->
+  <div class="footer-top-area section-inner-padding-200">
+    <div class="footer-top-shape">
+      <img class="img-width" src="/assets/images/background/footer-shape-bg.png" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer-top-box-wrapper">
+            <!-- Start Footer About -->
+            <div class="footer-top-single-item footer-about">
+              <a href="/index.html" class="logo">
+                <img class="img-fluid" src="/assets/images/logo/logo.png" alt="">
+              </a>
+              <p>Our goal is to provide free
+                Maternity Intensive Care to her
+                that she deserves.</p>
+            </div>
+            <!-- End Footer About -->
+            <!-- Start Footer Widget -->
+            <div class="footer-top-single-item footer-menu footer-widget">
+              <h4 class="title">Blogs</h4>
+
+              <ul class="footer-nav">
+                {% for category in site.data.mainCategories.categories %}
+                <li>
+                  <a href="{{ site.url }}{{ site.data.mainCategories.path }}{{ category }}">{{ category |
+                    capitalize}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <!-- End Footer Widget -->
+            <!-- Start Footer Widget -->
+            <div class="footer-top-single-item footer-social footer-widget">
+              <h4 class="title">Our focus</h4>
+
+              <ul class="social-link-2">
+                <li>
+                  <a href="#" target="_blank">
+                    <span class="icon"><i class="icofont-doctor-alt"></i></span>
+                    <span class="text">Consultation</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <span class="icon"><i class="icofont-prescription"></i></span>
+                    <span class="text">Monitoring</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <span class="icon"><i class="icofont-test-bottle"></i></span>
+                    <span class="text">Lab tests/Drugs</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Footer Widget -->
+            <!-- Start Footer Widget -->
+            <div class="footer-top-single-item footer-contact footer-widget">
+              <h4 class="title">Contact</h4>
+
+              <div class="footer-info">
+                <address class="footer-single-info">
+                  <span class="icon"><i class="icofont-google-map"></i></span>
+                  <span class="text">Address: We are arranging physical building</span>
+                </address>
+                <a href="mailto:info@maternityintensivecare.org" class="footer-single-info">
+                  <span class="icon"><i class="icofont-envelope"></i></span>
+                  <span class="text">info@maternityintensivecare.org</span>
+                </a>
+              </div>
+            </div>
+            <!-- End Footer Widget -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer Top Area -->
+
+  <!-- Start Footer BottomArea -->
+  <div class="footer-bottom-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="copyright-text text-center">
+            &copy; All rights reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer Bottom Area-->
+</footer>
+<!-- ...::: End Footer Section :::... -->
+
+<!-- material-scrolltop button -->
+<button class="material-scrolltop" type="button"></button>

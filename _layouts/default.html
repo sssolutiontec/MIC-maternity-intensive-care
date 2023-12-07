@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ page.title }}</title>
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/png">
+  <link rel="stylesheet" href="/assets/css/vendor/vendor.min.css">
+  <link rel="stylesheet" href="/assets/css/plugins/plugins.min.css">
+  <link rel="stylesheet" href="/assets/css/style.min.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  {% feed_meta %}
+  {% seo %}
+  {% if jekyll.environment == "production" %}
+    <script src="my-analytics-script.js"></script>
+  {% endif %}
+</head>
+
+<body>
+
+  <main class="main-wrapper">
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+  </main>
+
+  <!-- ::::::::::::::All JS Files here :::::::::::::: -->
+  <script src="/assets/js/vendor/vendor.min.js"></script>
+  <script src="/assets/js/plugins/plugins.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
